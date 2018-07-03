@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> Mariem's best destinations  </title>
+<style>
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+  position: relative;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+</style>
+</head>
+
+<body>
+<h2> <font face="verdana" color="green"> Discover my favorite cities </font> </h2>
+
+
+
+<div class="container" id="demo">
+	<img src="../img/brest.jpg" alt="brest" style="width:50%">
+	<button class="btn" onclick="loadXMLDoc1()"> Brest </button>
+</div>
+<div class="container" id="demo1">
+</div>
+<div class="container" id="demo">
+	<img src="../img/vienna.jpg" alt="vienna" style="width:50%">
+	<button class="btn" onclick="loadXMLDoc2()"> Vienna </button>
+</div>
+<div class="container" id="demo2">
+</div>
+<div class="container" id="demo">
+	<img src="../img/prague.jpg" alt="prague" style="width:50%">
+	<button class="btn" onclick="loadXMLDoc3()"> Prague </button>
+</div>
+<div class="container" id="demo3">
+</div>
+<div class="container" id="demo">
+	<img src="../img/geneva.jpg" alt="geneva" style="width:50%">
+	<button class="btn" onclick="loadXMLDoc4()"> Geneva </button>
+</div>
+<div class="container" id="demo4">
+</div>
+<script>
+function loadXMLDoc1(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("demo1").innerHTML = this.responseText;
+		}
+	};
+	xhttp.open("GET","../text/brest.txt",true);
+	xhttp.send();
+}
+
+function loadXMLDoc2(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("demo2").innerHTML = this.responseText;
+		}
+	};
+	xhttp.open("GET","../text/vienna.txt",true);
+	xhttp.send();
+}
+
+function loadXMLDoc3(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("demo3").innerHTML = this.responseText;
+		}
+	};
+	xhttp.open("GET","../text/prague.txt",true);
+	xhttp.send();
+}
+
+function loadXMLDoc4(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("demo4").innerHTML = this.responseText;
+		}
+	};
+	xhttp.open("GET","../text/geneva.txt",true);
+	xhttp.send();
+}
+</script>
+
+</body>
+</html>
